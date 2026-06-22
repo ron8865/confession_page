@@ -1,0 +1,139 @@
+:root {
+    --pink-blush: #fff0f3;
+    --red-sweet: #ff4d6d;
+    --deep-wine: #590d22;
+    --glass-plate: rgba(255, 255, 255, 0.9);
+    --border-glow: #ffb3c1;
+}
+
+body {
+    margin: 0; padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ffe5ec, #ffb3c1);
+    min-height: 100vh; color: var(--deep-wine);
+    overflow-x: hidden;
+}
+
+#hearts-bg {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    pointer-events: none; z-index: 0;
+}
+
+.heart-particle {
+    position: absolute; bottom: -10%;
+    animation: floatUp linear forwards; opacity: 0.8;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}
+
+.hidden { display: none !important; }
+
+.auth-box-container {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(89, 13, 34, 0.5);
+    display: flex; justify-content: center; align-items: center; z-index: 999;
+}
+
+.auth-card, .modal-card, .creation-suite-container, .public-feed-arena {
+    background: var(--glass-plate); backdrop-filter: blur(8px);
+    border: 2px solid var(--border-glow); border-radius: 20px;
+    padding: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    max-width: 500px; width: 90%; margin: 20px auto; z-index: 10; position: relative;
+}
+
+.creation-suite-container { max-width: 600px; }
+
+/* 🌟 SAFE AUTO-SCROLL FEED: Jab confessions bohot zyada ho jayein */
+.public-feed-arena { 
+    max-width: 1000px; 
+    max-height: 650px; 
+    overflow-y: auto; 
+    padding-right: 15px;
+}
+
+/* Scrollbar ko sundar banane ke liye styling */
+.public-feed-arena::-webkit-scrollbar {
+    width: 8px;
+}
+.public-feed-arena::-webkit-scrollbar-track {
+    background: transparent;
+}
+.public-feed-arena::-webkit-scrollbar-thumb {
+    background: var(--border-glow);
+    border-radius: 10px;
+}
+.public-feed-arena::-webkit-scrollbar-thumb:hover {
+    background: var(--red-sweet);
+}
+
+.auth-tabs { display: flex; margin-bottom: 1.5rem; gap: 10px; }
+.auth-tab {
+    flex: 1; padding: 10px; border: none; background: #e0e0e0;
+    cursor: pointer; font-weight: bold; border-radius: 10px;
+}
+.auth-tab.active { background: var(--red-sweet); color: white; }
+
+input, textarea {
+    width: 100%; padding: 12px; margin: 10px 0;
+    border: 2px solid var(--border-glow); border-radius: 10px;
+    box-sizing: border-box; font-size: 1rem;
+}
+textarea { height: 100px; resize: vertical; }
+
+.checkpoint-setup-box {
+    background: #fff0f3; padding: 15px; border-radius: 12px;
+    margin: 15px 0; border: 1px dashed var(--red-sweet);
+}
+.checkpoint-setup-box h3 { margin-top: 0; color: var(--red-sweet); }
+
+.btn-primary, .btn-secondary, .btn-danger, .btn-unlock-id, .btn-close {
+    width: 100%; padding: 12px; border: none; border-radius: 10px;
+    font-size: 1rem; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 5px;
+}
+.btn-primary { background: var(--red-sweet); color: white; }
+.btn-primary:hover { background: #ff758f; }
+.btn-secondary { background: #a2d2ff; color: #03045e; }
+
+/* 🗑️ DELETE BUTTON STYLE: UI par pyara dikhne ke liye */
+.btn-danger { background: #c9184a; color: white; }
+.btn-danger:hover { background: #ff1453; transform: scale(1.02); }
+
+.app-navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    background: var(--glass-plate); padding: 10px 5%;
+    border-bottom: 2px solid var(--border-glow);
+}
+.nav-control-group { display: flex; gap: 15px; }
+.nav-control-group button { width: auto; padding: 10px 20px; }
+
+.notes-masonry-layout {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;
+}
+.love-letter-note {
+    background: white; border-radius: 15px; padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    display: flex; flex-direction: column; justify-content: space-between;
+    border-left: 5px solid var(--red-sweet);
+}
+.note-header { font-weight: bold; color: var(--red-sweet); font-size: 1.1rem; }
+.note-body { margin: 15px 0; font-style: italic; line-height: 1.4; }
+.note-footer { text-align: right; font-size: 0.85rem; color: #777; margin-top: 10px; }
+
+.btn-unlock-id { background: #fff0f3; color: var(--red-sweet); border: 2px solid var(--red-sweet); }
+.btn-unlock-id:hover { background: var(--red-sweet); color: white; }
+
+.modal-overlay {
+    position: fixed; top:0; left:0; width:100%; height:100%;
+    background: rgba(0,0,0,0.6); display: flex; justify-content: center; align-items: center; z-index: 1000;
+}
+.question-highlight { background: #ffe5ec; padding: 15px; border-radius: 10px; font-weight: 600; text-align: center; }
+.reveal-success-box { padding: 15px; background: #d4edda; color: #155724; border-radius: 10px; text-align: center; margin: 15px 0; font-weight: bold; }
+
+.secure-dashboard { background: white; max-width: 95%; width: 100%; border-radius: 15px; padding: 20px; }
+.table-scroll-wrap { overflow-x: auto; margin-bottom: 20px; }
+table { width: 100%; border-collapse: collapse; text-align: left; }
+th, td { padding: 12px; border-bottom: 1px solid #ddd; }
+th { background-color: #ffb3c1; color: var(--deep-wine); }

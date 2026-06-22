@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cupid's Cryptic Confessions 💖</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="hearts-bg"></div>
+
+    <div id="auth-overlay" class="auth-box-container">
+        <div class="auth-card">
+            <div class="auth-tabs">
+                <button id="tab-login" class="auth-tab active">Login</button>
+                <button id="tab-signup" class="auth-tab">Sign Up</button>
+            </div>
+            <h2 id="auth-title">Welcome Back, Lover! 💖</h2>
+            <form id="universal-auth-form">>
+                <input type="email" id="auth-email" placeholder="Your Email Address" required>
+                <input type="password" id="auth-password" placeholder="Password Space" required>
+                <button type="submit" id="auth-submit-btn" class="btn-primary">Let Me In ✨</button>
+            </form>
+        </div>
+    </div>
+
+    <main id="main-app-content" class="hidden">
+        <header class="app-navbar">
+            <h1>Cupid's Universe 🏹</h1>
+            <div class="nav-control-group">
+                <button id="admin-trigger-btn" class="btn-secondary">👑 Admin Vault</button>
+                <button id="global-logout-btn" class="btn-danger">Logout 🚪</button>
+                <a href="https://www.instagram.com/zentiqo_/?utm_source=ig_web_button_share_sheet" id="about" class="about">any help just Dm</a>
+            </div>
+        </header>
+
+        <section class="creation-suite-container">
+            <h2>Whisper a Secret into the Ether 💌</h2>
+            <form id="confession-form">
+                <input type="text" id="user-name" placeholder="Your Alias (or leave blank for Anonymous)">
+                <input type="text" id="user-insta" placeholder="Your Instagram Username (@id)">
+                <input type="text" id="user-contact" placeholder="Your Secret Phone No. (Optional)">
+                <input type="text" id="partner-name" placeholder="Crush / Target Name" required>
+                <textarea id="confession-desc" placeholder="Write your unfiltered feelings here..." required></textarea>
+                
+                <div class="checkpoint-setup-box">
+                    <h3>🔒 Dynamic Gatekeeper Setup</h3>
+                    <input type="text" id="secret-question" placeholder="E.g., What is my pet's name?" required>
+                    <input type="text" id="secret-answer" placeholder="Expected Verification Answer" required>
+                </div>
+                <button type="submit" class="btn-primary">Launch Confession Flight 🕊️</button>
+            </form>
+        </section>
+
+        <section class="public-feed-arena">
+            <h2>The Public Feed Crypt 🌸</h2>
+            <div id="public-feed" class="notes-masonry-layout"></div>
+        </section>
+
+        <div id="riddle-modal" class="modal-overlay hidden">
+            <div class="modal-card">
+                <h2>🔐 Identity Checkpoint</h2>
+                <p>Answer their validation question correctly to extract the Instagram ID handle:</p>
+                <p id="riddle-modal-question" class="question-highlight"></p>
+                
+                <form id="riddle-challenge-form">
+                    <input type="text" id="riddle-user-answer" placeholder="Type your answer match..." required>
+                    <button type="submit" class="btn-primary">Verify Jawab ⚔️</button>
+                </form>
+                <div id="riddle-result-box" class="hidden"></div>
+                <button id="close-riddle-btn" class="btn-close">Close System Panel</button>
+            </div>
+        </div>
+
+        <section id="admin-dashboard-section" class="hidden secure-dashboard">
+            <h2>👑 Cupid's Master Control Registry Grid</h2>
+            <div class="table-scroll-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>From</th>
+                            <th>Insta ID</th>
+                            <th>Contact</th>
+                            <th>Target Partner</th>
+                            <th>Confession Text</th>
+                            <th>Key Answer</th>
+                            <th>Timestamp</th>
+                            <th>Actions 🛠️</th> </tr>
+                    </thead>
+                    
+                    <tbody id="admin-table-body"></tbody>
+                </table>
+            </div>
+            <button id="close-admin-btn" class="btn-danger">Close Admin Grid Matrix</button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
